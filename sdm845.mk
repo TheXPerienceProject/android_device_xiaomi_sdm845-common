@@ -204,9 +204,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
 
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
-
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/sdm845-tavil-snd-card_Button_Jack.kl:system/usr/keylayout/sdm845-tavil-snd-card_Button_Jack.kl
@@ -225,8 +222,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sdm845
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
+# PRODUCT_PACKAGES += \
+#     vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
 PRODUCT_PACKAGES += \
@@ -319,6 +316,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
+	device/xiaomi/sdm845-common/org.ifaa.android.manager \
     device/xiaomi/sdm845-common/power-libperfmgr
 
 # Telephony
