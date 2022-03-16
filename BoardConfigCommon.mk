@@ -39,6 +39,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm845
+TARGET_KERNEL_CLANG_COMPILE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm845
@@ -127,7 +128,8 @@ VENDOR_SECURITY_PATCH := 2020-12-01
 
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-
+BOARD_SEPOLICY_M4DEFS += \
+     sysfs_battery_supply=vendor_sysfs_battery_supply
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 PRODUCT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
